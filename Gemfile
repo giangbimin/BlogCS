@@ -25,6 +25,8 @@ gem 'redcarpet', '~> 3.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
