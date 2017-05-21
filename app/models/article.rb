@@ -16,7 +16,16 @@ class Article < ApplicationRecord
         }
     }
 
+  validates_processing_of :image
+  validate :image_size_validation
+
   def should_generate_new_friendly_id?
     slug.blank? || title_changed?
+  end
+
+private
+
+  def image_size_validation
+    errors[:image] << 'should be less than 10 mb' if image.size > 10.megabytes
   end
 end
