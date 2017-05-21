@@ -3,7 +3,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Articles</h1>
-
+<%= form_tag articles_path, method: :get do %>
+  <%= text_field_tag 'term', params[:term], placeholder: "Enter text you wanto find" %>
+  <%= submit_tag 'Search!' %>
+<% end %>
 <table>
   <thead>
     <tr>

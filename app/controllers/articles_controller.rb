@@ -1,10 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: %i[show edit update destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order('created_at DESC')
+    if !params[:term].blank?
+      @articles = Article.search_for(params[:term]).order('created_at DESC')
+    else
+      @articles = Article.all.order('created_at DESC')
+    end
   end
 
   # GET /articles/1
