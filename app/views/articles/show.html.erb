@@ -9,17 +9,12 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @article.body %>
+  <%= markdown @article.body %>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @article.description %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @article.slug %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

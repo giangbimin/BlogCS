@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'friendly_id', '~> 5.1.0'
+gem 'pygments.rb', '~> 0.6.3'
+gem 'redcarpet', '~> 3.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
