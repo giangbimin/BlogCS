@@ -1,8 +1,12 @@
 # Article model
 class Article < ApplicationRecord
   extend FriendlyId
+
   include PgSearch
+
   friendly_id :title, use: :slugged
+
+  mount_uploader :image, ImageUploader
 
   pg_search_scope :search_for, against: { title: 'A', description: 'B', body: 'C' },
     using: {
